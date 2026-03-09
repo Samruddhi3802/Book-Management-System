@@ -1,4 +1,4 @@
-import { BookOpen, Plus, User } from 'lucide-react';
+import { BookOpen, Plus } from 'lucide-react';
 
 export default function Navbar({ onAddClick }) {
   return (
@@ -6,22 +6,16 @@ export default function Navbar({ onAddClick }) {
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <div className="flex items-center gap-3">
           <div className="bg-white/20 p-2 rounded-xl backdrop-blur-md">
-            <BookOpen size={28} className="text-white" />
+            <BookOpen size={28} />
           </div>
           <span className="text-2xl font-black tracking-tighter italic">BookShelf</span>
         </div>
-        
-        <div className="flex items-center gap-4">
-          <button 
-            onClick={onAddClick}
-            className="bg-white text-indigo-700 px-6 py-3 rounded-2xl font-bold flex items-center gap-2 hover:shadow-xl hover:shadow-white/10 transition-all active:scale-95"
-          >
-            <Plus size={20} strokeWidth={3} /> Add New Book
-          </button>
-          <div className="w-12 h-12 rounded-2xl bg-indigo-500 border border-white/20 flex items-center justify-center cursor-pointer overflow-hidden">
-            <User size={24} />
-          </div>
-        </div>
+        <button 
+          onClick={onAddClick}
+          className="bg-white text-indigo-700 px-6 py-3 rounded-2xl font-bold flex items-center gap-2 hover:shadow-xl hover:shadow-white/10 transition-all active:scale-95"
+        >
+          <Plus size={20} strokeWidth={3} /> Add New Book
+        </button>
       </div>
     </nav>
   );
