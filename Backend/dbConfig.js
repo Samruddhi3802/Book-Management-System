@@ -1,8 +1,8 @@
 const mongoose=require("mongoose");
-// require("dotenv").config();
-
+const dotenv=require("dotenv");
+dotenv.config();
 const dbConnect=async ()=>{
-    await mongoose.connect("mongodb+srv://Samruddhi:samruddhi1234@bookmgmt.voijuim.mongodb.net/?appName=BookMgmt")
+    await mongoose.connect(process.env.MONGOURI)
     .then(()=>{
         console.log("Database connected successfully"); 
     })
