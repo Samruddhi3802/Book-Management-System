@@ -8,13 +8,13 @@ const app=express();
 app.use(express.json());
 
 app.listen(port,()=>{
-    console.log(`server is running on port ${port}`);
+    console.log(`server is running on http://localhost:${port}`);
 })
 
 app.get("/", (req, res)=>{
     res.send("Backend Server is running successfully");
 })
 
-app.use("/book", router);
+app.use("/api/book", router);
 
 dbConnect();

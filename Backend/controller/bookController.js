@@ -107,7 +107,7 @@ const deleteOneBookController=async(req, res)=>{
 const updateOneBookController=async(req, res)=>{
     try {
         let data=req.body;
-        let response=await book.updateOne({_id:data.id},{
+        let response=await book.updateOne({_id:data._id},{
             $set:{
                 bookTitle:data.bookTitle,
                 bookAuthor:data.bookAuthor,
