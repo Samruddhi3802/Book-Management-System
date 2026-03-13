@@ -1,19 +1,22 @@
 import axios from "axios";
 
+const API = axios.create({
+    baseURL: import.meta.env.VITE_API_URL
+})
 export const getBooks=()=>{
-    return axios.get(`/api/book/getbooks`);
+    return API.get(`/api/book/getbooks`);
 }
 
 export const addBook=(data)=>{
-    return axios.post(`/api/book/add`, data);
+    return API.post(`/api/book/add`, data);
 }
 
 export const updateBook=(id, data)=>{
-    return axios.put(`/api/book/updateonebook`, {
+    return API.put(`/api/book/updateonebook`, {
         _id:id,
         ...data});
 }
 
 export const deleteBook=(data)=>{
-    return axios.delete(`/api/book/deleteonebook`, {data});
+    return API.delete(`/api/book/deleteonebook`, {data});
 }
